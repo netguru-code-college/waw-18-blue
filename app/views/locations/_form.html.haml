@@ -1,0 +1,7 @@
+%div.container-fluid.mt-5
+  %h1.text-center.mt-5 Add location
+  = simple_form_for @location do |f|
+    = f.input :name
+    = f.input :type
+    = f.input :is_przypal
+    = f.input :address
