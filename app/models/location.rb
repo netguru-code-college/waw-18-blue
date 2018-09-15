@@ -1,4 +1,4 @@
 class Location < ApplicationRecord
-  has_many :events
-  has_many :addresses
+  has_many :events, dependent: :destroy
+  has_many :ratings, dependent: :destroy
 end
