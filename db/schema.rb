@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_09_15_105719) do
-=======
-ActiveRecord::Schema.define(version: 2018_09_15_113235) do
->>>>>>> associations
+ActiveRecord::Schema.define(version: 2018_09_15_120053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +67,9 @@ ActiveRecord::Schema.define(version: 2018_09_15_113235) do
     t.boolean "is_przypal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
+    t.float "longitude"
+    t.float "latitude"
   end
 
   create_table "ratings", force: :cascade do |t|
