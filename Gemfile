@@ -15,6 +15,11 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'devise'
+gem "paperclip", "~> 6.0.0"
+gem 'geocoder', '~> 1.5'
+gem 'activeadmin'
+
 group :development, :test do
   gem 'pry-rails'
 end
