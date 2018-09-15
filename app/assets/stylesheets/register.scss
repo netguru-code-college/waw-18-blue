@@ -1,0 +1,43 @@
+label[for="user_email"], label[for="user_password"], label[for="user_password_confirmation"] {
+	display: none;
+}
+
+input {
+	height: 50px;
+}
+
+input[id="user_password"] {
+	border-radius: 0px;
+}
+
+input[id="user_password"], input[id="user_password_confirmation"] {
+	margin-top: -1px;
+}
+
+.page-wrapper {
+	background-image: url('images/drinking_login.jpeg');
+}
+
+.form-wrapper {
+	max-width: 400px;
+	margin: auto;
+}
+
+.field {
+	margin-top: -24px;
+}
+
+.upload-image {
+	padding-top: 20px;
+	text-align: center;
+	/*border: 1px solid gray;*/
+}
+
+a {
+	@clone .btn;
+}
+
+/*input:focus {
+	z-index: 10;
+	max-width: 100px;
+}*/
