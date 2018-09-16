@@ -47,4 +47,8 @@ class LocationsController < ApplicationController
   def location_params
     params.require(:location).permit(:name, :location_type, :is_przypal, :address)
   end
+
+  def self.correct_addres(location)
+		
+	end	
 end
