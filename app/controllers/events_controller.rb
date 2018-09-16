@@ -55,10 +55,23 @@ class EventsController < ApplicationController
   def event_hashes
     events = Event.includes(:location).map do |e|
       e.attributes.merge!(
-        address: e.location.address, 
+        address: e.location.address,
         latitude: e.location.latitude,
-        longitude: e.location.longitude
+        longitude: e.location.longitude,
+        location_name: e.location.name,
       )
     end
+    merged_events = {}
+
+    events.each do |e|
+      if merged_events.key? e['location_id']
+        merged_events[e['location_id']]['name'] += 
+        "<b>#{e['name']}</b></br>#{e['start_time']}-#{e['end_time']}</br>"
+      else
+        merged_events[e['location_id']] = e
+        merged_events[e['location_id']]['name'] = "<b>#{e['name']}</b></br>#{e['start_time']}-#{e['end_time']}</br>"
+      end
+    end
+    return merged_events.values
   end
 end

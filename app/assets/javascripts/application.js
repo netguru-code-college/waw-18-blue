@@ -47,7 +47,30 @@ function mapSetup(userCoords = [52.232, 21.017]) {
 function placeMarkers(markers, type) {
     for (var i = 0; i < markers.length; i++) {
         marker = new L.marker([markers[i].latitude,markers[i].longitude], {icon: icons[type]})
-            .bindPopup(markers[i][0])
+            .bindPopup(generatePopup(markers[i], type))
             .addTo(map);
+    }
+}
+
+function generatePopup(marker, type) {
+
+    var popup = 'x';
+        if (type == 'event') {
+            popup += `<br/><b>Location: </b> ${marker.location_name}`
+        } else {
+            popup += `<br/><b>Type: </b>${marker.location_type}`
+        }
+
+    if(type == 'location') {
+        return `<b>Name: </b>${marker.name}<br/>
+                <b>Type: </b>${marker.location_type}<br/>
+                <b>Przypal: </b>${marker.is_przypal ? 'Yes' : 'No'}</b><br/>
+                <b>Address: </b>${marker.address}`;
+    } else {
+        return `${marker.name}
+                <p style="text-align: center">== Location ==</p>
+                <b>Name: </b>${marker.location_name}<br/>
+                <b>Przypal: </b>${marker.is_przypal ? 'Yes' : 'No'}</b><br/>
+                <b>Address: </b>${marker.address}`;
     }
 }
