@@ -1,26 +1,53 @@
 class EventsController < ApplicationController
   def index
     gon.push({
-      :events => [
-        ["<b>Event 1</b><br/> Some description",52.232, 21.017],
-        ["<b>Event 2</b><br/> Some description",52.233, 21.014],
-        ["<b>Event 3</b><br/> Some description",52.235, 21.012],
-      ]
+      :events => Event.joins(:location) #.all 
     })
+
+    @events = Event.all
   end
 
   def new
+    @event = Event.new
   end
 
+  def show
+    @event = Event.find(params[:id])
+  end
+    
   def create
+    @event = Event.new(event_params)
+    if @event.save
+      redirect_to action: "index"
+    else
+      render 'new'
+    end
   end
 
-  def edit
+  def edit 
+    @event = Event.find(params[:id])
   end
 
   def update
+    @event = Event.find(params[:id])
+
+    if @event.update(event_params)
+      redirect_to event_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+
+    redirect_to action: "index"
+  end
+
+  private
+
+  def event_params
+    params.require(:event).permit(:name, :start_time, :end_time, :location_id)
   end
 end
