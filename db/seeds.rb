@@ -10,6 +10,7 @@ p "Existing Data Removed!"
 User.create(email: 'piotr.wydrzycki@gmail.com',nickname: 'ben', password: 'password')
 User.create(email: 'miles.davis@yahoo.com', nickname: 'mile', password: 'password')
 User.create(email: 'carlos.jobim@google.com', nickname: 'carlo', password: 'password')
+User.create(email: 'janusz@cebula.pl', nickname: 'janusz', password: 'password')
 
 SEEDS_LOCATION_TYPES = %w[pub outside restaurant house_party roof_party]
 loc_roads = %w[jerozolimskie mazowiecka puławska krucza smolna chmielna towarowa miodowa górczewska]
