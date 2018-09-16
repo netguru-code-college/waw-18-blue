@@ -36,10 +36,8 @@ var map,
 //map setup - provide default user coordinates in form of [Y-axis, X-axis]
 //default - center of Warsaw = [52.232, 21.017]
 function mapSetup() {
-    if(!userCoords) {
-        userCoords = [52.232, 21.017]
-    }
-    map = L.map('markers-map').setView(userCoords, 15); //last arg -> zoom lvl
+    var userCoords = [52.232, 21.017]
+    map = L.map('markers-map').setView(userCoords, 12); //last arg -> zoom lvl
     // create the tile layer with correct attribution
     var osmUrl='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     var osmAttrib='Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors';
