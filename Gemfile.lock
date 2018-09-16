@@ -135,7 +135,6 @@ GEM
     has_scope (0.7.2)
       actionpack (>= 4.1)
       activesupport (>= 4.1)
-    hirb (0.7.3)
     html2haml (2.2.0)
       erubis (~> 2.7.0)
       haml (>= 4.0, < 6)
@@ -346,7 +345,6 @@ DEPENDENCIES
   faker
   geocoder (~> 1.5)
   haml-rails
-  hirb
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener
