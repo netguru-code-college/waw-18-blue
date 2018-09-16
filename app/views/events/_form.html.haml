@@ -1,6 +1,7 @@
 %div.container-fluid.mt-5
-  %h1.text-center.mt-5 Add event
-  = simple_form_for @location do |f|
+  = simple_form_for @event do |f|
     = f.input :name
     = f.input :start_time
     = f.input :end_time
+    = f.input :location_id, collection: Location.pluck(:name, :id), include_blank: false
+    = f.submit

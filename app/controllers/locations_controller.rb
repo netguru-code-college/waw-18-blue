@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   def index
-    @locations = Location.all.order("created_at DESC")
+    @locations = Location.all
   end
 
   def new

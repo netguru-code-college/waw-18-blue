@@ -1,7 +1,15 @@
-- @locations.each do |location|
-  %li.d-flex.justify-content-around
-    = link_to location.id, location_path(location.id)  
-    %p= location.name
-    %p= location.location_type
-    %p= location.is_przypal
-    %p= location.address
+%div.container
+  =link_to 'Add Location', new_location_path, class: 'btn  btn-success mt-5'
+  - @locations.each do |location|
+    %div.row.mt-5.mb-5
+      %p.col-sm.h3 #
+      %p.col-sm.h3 Name
+      %p.col-sm.h3 Location type
+      %p.col-sm.h3 is_przypał
+      %p.col-sm.h3 Address
+    %li.row
+      = link_to location.id, location_path(location.id), class: 'col-sm'
+      %p.col-sm= location.name
+      %p.col-sm= location.location_type
+      %p.col-sm= location.is_przypal
+      %p.col-sm= location.address
