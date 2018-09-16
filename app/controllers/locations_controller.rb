@@ -16,6 +16,7 @@ class LocationsController < ApplicationController
 
     if @location.save
         redirect_to action: "index"
+        @location.save
     else
       render 'new'
     end
@@ -31,7 +32,7 @@ class LocationsController < ApplicationController
     end
   end
 
-  def edit 
+  def edit
     @location = Location.find(params[:id])
   end
 
@@ -46,5 +47,12 @@ class LocationsController < ApplicationController
 
   def location_params
     params.require(:location).permit(:name, :location_type, :is_przypal, :address)
+  end
+
+  def geocoder_find_address(address)
+    results = Geocode.search(address)
+    results.first.address = @location.address
+    results.first.coordinates[1] = @location.latitude
+    results.first.coordinates[2] = @location.longitude
   end
 end
