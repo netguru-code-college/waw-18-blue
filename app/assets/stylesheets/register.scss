@@ -1,6 +1,6 @@
 @font-face {
   font-family: "HeaderFont";
-  src: url("/fonts/GenerationSeptember.ttf") format("ttf");
+  src: url("assets/fonts/GenerationSeptember.ttf");
 }
 
 /*----------------------------*/
@@ -22,7 +22,7 @@ input[id="user_password"], input[id="user_password_confirmation"] {
 }
 
 .header {
-	font-family: "HeaderFont";
+	font-family: HeaderFont;
 	text-align: center;
 	font-size: 50pt;
 	background-color: #093624;
@@ -33,6 +33,7 @@ input[id="user_password"], input[id="user_password_confirmation"] {
 .page-wrapper {
 	background-image: url('https://i.imgur.com/f6tfKph.jpg');
 	background-size: cover;
+	height: 100%;
 }
 
 .form-wrapper {
