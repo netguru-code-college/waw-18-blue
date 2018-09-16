@@ -18,7 +18,7 @@ class Location < ApplicationRecord
     return if address.blank?
     results = Geocoder.search(address).first
 		data = results.data['address']
-		addresses = [data['road'], data['house_number'], data['city'], data['country']].compact.join(' ,')
+		addresses = [data['road'], data['house_number'], data['city'], data['country']].compact.join(', ')
 		self.address = addresses
     self.latitude = results.latitude
     self.longitude = results.longitude
