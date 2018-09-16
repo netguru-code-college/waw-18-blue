@@ -1,2 +1,14 @@
-%h1 Ratings#index
-%p Find me in app/views/ratings/index.html.haml
+%h1 Ratings list
+=link_to 'Add rate', new_rating_path, class: 'btn  btn-success mt-5'
+%div.row.mt-5.mb-5.h5
+  %p.col-sm Rate
+  %p.col-sm Location
+  %p.col-sm Rate description
+- @ratings.each do |rating|
+  %li.row.h5
+    %p.col-sm= rating.rate
+    %p.col-sm= rating.location_id
+    %p.col-sm= rating.desc
+
+
+
