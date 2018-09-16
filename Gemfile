@@ -22,6 +22,11 @@ gem 'activeadmin'
 gem 'bootstrap', '~> 4.1.3'
 gem 'simple_form'
 
+# maps support
+gem 'leaflet-rails'
+# allows accessing ruby variables in js
+gem 'gon'
+
 group :development, :test do
   gem 'pry-rails'
 end
