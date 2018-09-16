@@ -25,7 +25,7 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
 
     if @location.update(location_params)
-      redirect_to @location
+      redirect_to location_path
     else
       render 'edit'
     end
@@ -36,15 +36,15 @@ class LocationsController < ApplicationController
   end
 
   def destroy
-    @Location = Location.find(params[:id])
+    @location = Location.find(params[:id])
     @location.destroy
 
-    redirect_to location_path
+    redirect_to action: "index"
   end
 
   private
 
   def location_params
-    params.require(:location).permit(:name, :type, :is_przypal, :address)
+    params.require(:location).permit(:name, :location_type, :is_przypal, :address)
   end
 end

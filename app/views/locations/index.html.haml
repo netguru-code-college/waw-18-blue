@@ -1,3 +1,7 @@
-%div.container-fluid.mt-5
-	%h1.text-center.mt-5 Location list
-%p Find me in app/views/locations/index.html.haml
+- @locations.each do |location|
+  %li.d-flex.justify-content-around
+    = link_to location.id, location_path(location.id)  
+    %p= location.name
+    %p= location.location_type
+    %p= location.is_przypal
+    %p= location.address
