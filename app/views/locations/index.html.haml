@@ -1,12 +1,12 @@
-%h1 Locations#index
-%p Find me in app/views/locations/index.html.haml
+%div.header
+  %h1 NajebkApp
 %div{:id => "markers-map"}
+
 
 :javascript
   mapSetup();
   console.log(gon.locations)
   placeMarkers(gon.locations, 'location');
-
 
 
 %div.container

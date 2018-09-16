@@ -9,12 +9,12 @@
     = include_gon
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    -if user_signed_in?
-      %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-        %a.navbar-brand NajebkApp
-        %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
-        #navbarNav.collapse.navbar-collapse
-          %ul.navbar-nav
+    %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+      %a.navbar-brand NajebkApp
+      %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
+      #navbarNav.collapse.navbar-collapse
+        %ul.navbar-nav
+          -if user_signed_in?
             %li.nav-item.active
               %a.nav-link{:href => root_path}
                 Home
@@ -24,7 +24,10 @@
             %li.nav-item
               %a.nav-link{:href => locations_path} Browse Locations
             %li.nav-item
-              %a.nav-link{:href => "#"} 
+              %a.nav-link{:href => events_path} Browse Events
             %li.nav-item
               %a.nav-link{:href => destroy_user_session_path, method: :delete} Logout
+          -if !user_signed_in?
+            %li.nav-item
+              %a.nav-link{:href => new_user_session_path} LogIn
     = yield
