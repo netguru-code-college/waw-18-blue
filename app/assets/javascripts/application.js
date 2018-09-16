@@ -46,7 +46,7 @@ function mapSetup(userCoords = [52.232, 21.017]) {
 
 function placeMarkers(markers, type) {
     for (var i = 0; i < markers.length; i++) {
-        marker = new L.marker([markers[i][1],markers[i][2]], {icon: icons[type]})
+        marker = new L.marker([markers[i].latitude,markers[i].longitude], {icon: icons[type]})
             .bindPopup(markers[i][0])
             .addTo(map);
     }
