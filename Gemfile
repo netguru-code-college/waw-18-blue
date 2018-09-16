@@ -20,6 +20,7 @@ gem "paperclip", "~> 6.0.0"
 gem 'geocoder', '~> 1.5'
 gem 'activeadmin'
 gem 'bootstrap', '~> 4.1.3'
+gem 'simple_form'
 
 group :development, :test do
   gem 'pry-rails'

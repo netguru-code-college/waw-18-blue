@@ -1,0 +1,10 @@
+%h1
+  Lokacja nr:
+  = @location.id
+%div.container
+  %p= @location.name
+  %p= @location.location_type
+  %p= @location.is_przypal
+  %p= @location.address
+  = link_to "Edit", edit_location_path(@location)
+  = link_to "Delete", location_path(@location), method: :delete, class:"button is-danger"

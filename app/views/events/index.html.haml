@@ -1,2 +1,14 @@
 %h1 Events#index
-%p Find me in app/views/events/index.html.haml
+%div.container
+  =link_to 'Add Event', new_event_path, class: 'btn  btn-success mt-5'
+    %div.row.mt-5.mb-5
+      %p.col-sm.h3 #
+      %p.col-sm.h3 Name
+      %p.col-sm.h3 Start time
+      %p.col-sm.h3 End time
+    - @events.each do |event|
+    %li.row
+      = link_to event.id, event_path(event.id), class: 'col-sm'
+      %p.col-sm= event.name
+      %p.col-sm= event.start_time
+      %p.col-sm= event.end_time
