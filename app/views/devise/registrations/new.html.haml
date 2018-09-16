@@ -1,14 +1,15 @@
 // linkages
-%link{:rel => :stylesheet, :type => :"text/css", :href => "/assets/stylesheets/register.scss"}
+%link{:rel => :stylesheet, :type => :"text/css", :href => "stylesheets/register.scss"}
 
 %div.page-wrapper
 
+  %div.head
   %div.header
     %h1 NajebkApp
+    %h2 Sign up and get drinkin'
   %p
 
   %div.form-wrapper.text-center
-    %h2 Sign up and get drinkin'
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = devise_error_messages!
       .field
@@ -32,5 +33,5 @@
         = f.file_field :avatar
 
       %br/
-      = f.submit "Sign up", :class => "btn btn-success"
+      = f.submit "Sign up"
     = render "devise/shared/links"

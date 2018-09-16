@@ -1,9 +1,6 @@
-@font-face {
-  font-family: "HeaderFont";
-  src: url("assets/fonts/GenerationSeptember.ttf");
+label[for="user_avatar"]{
+	padding-left: 30px;
 }
-
-/*----------------------------*/
 
 label[for="user_email"], label[for="user_password"], label[for="user_password_confirmation"] {
 	display: none;
@@ -21,19 +18,42 @@ input[id="user_password"], input[id="user_password_confirmation"] {
 	margin-top: -1px;
 }
 
-.header {
-	font-family: HeaderFont;
-	text-align: center;
-	font-size: 50pt;
+input[type="checkbox"]{
+	height: 13px;
+	margin-top: 30px;
+}
+
+
+h1 {
+	color: white;
+	font-size: 50pt !important;
+}
+
+.head {
 	background-color: #093624;
-	height: 200px;
+	height: 180px;
 	opacity: 0.5;
+}
+
+.header {
+	color: white;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+	max-height: 160px;
+	background-color: #093624;
+	text-align: center;
+	font-weight: bold;
+}
+
+.header h2 {
+	color: white;
 }
 
 .page-wrapper {
 	background-image: url('https://i.imgur.com/f6tfKph.jpg');
 	background-size: cover;
-	height: 100%;
+	height: 100vh;
 }
 
 .form-wrapper {
@@ -51,11 +71,7 @@ input[id="user_password"], input[id="user_password_confirmation"] {
 	/*border: 1px solid gray;*/
 }
 
-a {
-	@clone .btn;
-}
+.form-wrapper a:hover {
+	background-color: green;
 
-/*input:focus {
-	z-index: 10;
-	max-width: 100px;
-}*/
+}
