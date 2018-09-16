@@ -13,11 +13,11 @@ class EventsController < ApplicationController
     
   def create
     @event = Event.new(event_params)
-      if @event.save
-          redirect_to action: "index"
-      else
-        render 'new'
-      end
+    if @event.save
+      redirect_to action: "index"
+    else
+      render 'new'
+    end
   end
 
   def edit 
