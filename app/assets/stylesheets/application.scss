@@ -14,3 +14,17 @@
  *= require_self
  */
 @import "bootstrap";
+
+nav {
+	color: white;
+}
+
+.navbar-brand {
+	font-weight: bold;
+	font-size: 18pt;
+}
+
+.form-wrapper {
+	max-width: 800px;
+	margin: auto;
+}
