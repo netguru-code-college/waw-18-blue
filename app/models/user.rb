@@ -8,6 +8,6 @@ class User < ApplicationRecord
 
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
-  validates :email, uniqueness: true
-  validates :email, :password, presence: true
+  validates :email, :nickname,  uniqueness: true
+  validates :email, :password, :nickname, presence: true
 end
