@@ -112,7 +112,7 @@ Devise.setup do |config|
   # algorithm), the cost increases exponentially with the number of stretches (e.g.
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
   config.stretches = Rails.env.test? ? 1 : 11
-
+  
   # Set up a pepper to generate the hashed password.
   # config.pepper = '087e0e906f898fa3a82d733e1d47993d6ff2acbaf955cadf6717e767e15d57ea08222cc7a7b178e8f6088296a312252cdff4f3952f485c3c03eb0789770da434'
 
@@ -251,7 +251,7 @@ Devise.setup do |config|
   # config.navigational_formats = ['*/*', :html]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
-  config.sign_out_via = :delete
+  config.sign_out_via = :get
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting

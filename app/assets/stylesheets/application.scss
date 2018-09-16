@@ -14,3 +14,22 @@
  *= require_self
  */
 @import "bootstrap";
+
+@import "leaflet";
+
+#markers-map { height: 400px; }
+
+
+nav {
+	color: white;
+}
+
+.navbar-brand {
+	font-weight: bold;
+	font-size: 18pt;
+}
+
+.form-wrapper {
+	max-width: 800px;
+	margin: auto;
+}

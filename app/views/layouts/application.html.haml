@@ -6,23 +6,25 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = include_gon
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
-      %a.navbar-brand{:href => "#"} NajebkApp
-      %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
-      #navbarNav.collapse.navbar-collapse
-        %ul.navbar-nav
-          %li.nav-item.active
-            %a.nav-link{:href => "#"}
-              Home
-              %span.sr-only (current
-          %li.nav-item
-            %a.nav-link
-            = link_to 'Locations', locations_path
-          %li.nav-item
-            %a.nav-link
-            = link_to 'Events', events_path
-          %li.nav-item
-            %a.nav-link.disabled{:href => "#"} Disabled
+    -if user_signed_in?
+      %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+        %a.navbar-brand NajebkApp
+        %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
+        #navbarNav.collapse.navbar-collapse
+          %ul.navbar-nav
+            %li.nav-item.active
+              %a.nav-link{:href => root_path}
+                Home
+                %span.sr-only (current
+            %li.nav-item
+              %a.nav-link{:href => new_event_path} Create Najebka
+            %li.nav-item
+              %a.nav-link{:href => locations_path} Browse Locations
+            %li.nav-item
+              %a.nav-link{:href => "#"} 
+            %li.nav-item
+              %a.nav-link{:href => destroy_user_session_path, method: :delete} Logout
     = yield

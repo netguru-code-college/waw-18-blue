@@ -1,15 +1,30 @@
+%h1 Locations#index
+%p Find me in app/views/locations/index.html.haml
+%div{:id => "markers-map"}
+
+:javascript
+  mapSetup();
+  console.log(gon.locations)
+  placeMarkers(gon.locations, 'location');
+
+
+
 %div.container
   =link_to 'Add Location', new_location_path, class: 'btn  btn-success mt-5'
+  %div.row.mt-5.mb-5.h5
+    %p.col-sm #
+    %p.col-sm Name
+    %p.col-sm Location type
+    %p.col-sm Is przypał?
+    %p.col-sm Address
+    %p.col-sm Latitude
+    %p.col-sm Longitude
   - @locations.each do |location|
-    %div.row.mt-5.mb-5
-      %p.col-sm.h3 #
-      %p.col-sm.h3 Name
-      %p.col-sm.h3 Location type
-      %p.col-sm.h3 is_przypał
-      %p.col-sm.h3 Address
-    %li.row
+    %li.row.h5
       = link_to location.id, location_path(location.id), class: 'col-sm'
       %p.col-sm= location.name
       %p.col-sm= location.location_type
       %p.col-sm= location.is_przypal
       %p.col-sm= location.address
+      %p.col-sm= location.latitude.round(3)
+      %p.col-sm= location.longitude.round(3)

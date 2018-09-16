@@ -1,5 +1,9 @@
 class LocationsController < ApplicationController
   def index
+    gon.push({
+      :locations => Location.all
+    })
+
     @locations = Location.all
   end
 
@@ -31,7 +35,7 @@ class LocationsController < ApplicationController
     end
   end
 
-  def edit 
+  def edit
     @location = Location.find(params[:id])
   end
 
