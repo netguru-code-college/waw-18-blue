@@ -1,12 +1,12 @@
 // linkages
 %link{:rel => :stylesheet, :type => :"text/css", :href => "/assets/stylesheets/register.scss"}
 
-
-%div.jumbotron
-  %h1 BEERBUDDY
-%p
-
 %div.page-wrapper
+
+  %div.header
+    %h1 BEERBUDDY
+  %p
+
   %div.form-wrapper.text-center
     %h2 Sign up and get drinkin'
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|

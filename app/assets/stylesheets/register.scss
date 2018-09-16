@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "HeaderFont";
+  src: url("/fonts/GenerationSeptember.ttf") format("ttf");
+}
+
+/*----------------------------*/
+
 label[for="user_email"], label[for="user_password"], label[for="user_password_confirmation"] {
 	display: none;
 }
@@ -14,8 +21,18 @@ input[id="user_password"], input[id="user_password_confirmation"] {
 	margin-top: -1px;
 }
 
+.header {
+	font-family: "HeaderFont";
+	text-align: center;
+	font-size: 50pt;
+	background-color: #093624;
+	height: 200px;
+	opacity: 0.5;
+}
+
 .page-wrapper {
-	background-image: url('images/drinking_login.jpeg');
+	background-image: url('https://i.imgur.com/f6tfKph.jpg');
+	background-size: cover;
 }
 
 .form-wrapper {
