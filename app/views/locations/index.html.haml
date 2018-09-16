@@ -1,3 +1,14 @@
+%h1 Locations#index
+%p Find me in app/views/locations/index.html.haml
+%div{:id => "markers-map"}
+
+:javascript
+  mapSetup();
+  console.log(gon.locations)
+  placeMarkers(gon.locations, 'location');
+    
+
+
 %div.container
   =link_to 'Add Location', new_location_path, class: 'btn  btn-success mt-5'
   %div.row.mt-5.mb-5.h5
