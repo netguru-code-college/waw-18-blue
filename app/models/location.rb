@@ -5,7 +5,7 @@ class Location < ApplicationRecord
   has_many :ratings, dependent: :destroy
 
 
-  validates :type, inclusion: { in: AVAILABLE_TYPES ,
+  validates :location_type, inclusion: { in: AVAILABLE_TYPES ,
     message: "unnknown type" }
 
 end
