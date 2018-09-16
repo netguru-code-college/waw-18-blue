@@ -16,9 +16,14 @@
 @import "bootstrap";
 
 @import "leaflet";
-
 #markers-map { height: 400px; }
 
+#frame {
+  padding-top: 20px;
+  background-color: #F0F0F0;
+  border-width: medium;
+  border-radius: 4px;
+}
 
 nav {
 	color: white;

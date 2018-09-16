@@ -1,17 +1,17 @@
-%h1 Events#index
-%p Find me in app/views/events/index.html.haml
+%div.header
+  %h1 NajebkApp
 %div{:id => "markers-map"}
 
 :javascript
   mapSetup();
   console.log(gon.events);
   placeMarkers(gon.events, 'event');
-    
+
 
 
 %div.container
   =link_to 'Add Event', new_event_path, class: 'btn  btn-success mt-5'
-    %div.row.mt-5.mb-5
+    %div.row.mt-5.mb-5#frame
       %p.col-sm.h3 #
       %p.col-sm.h3 Name
       %p.col-sm.h3 Start time

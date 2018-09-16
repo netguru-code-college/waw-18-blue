@@ -1,6 +1,7 @@
-%h1 Locations#index
-%p Find me in app/views/locations/index.html.haml
+%div.header
+  %h1 NajebkApp
 %div{:id => "markers-map"}
+
 
 :javascript
   mapSetup();
@@ -8,10 +9,9 @@
   placeMarkers(gon.locations, 'location');
 
 
-
 %div.container
-  = button_to 'Add Location', new_location_path, class: 'btn  btn-success mt-5'
-  %div.row.mt-5.mb-5.h5
+  =link_to 'Add Location', new_location_path, class: 'btn  btn-success mt-5'
+  %div.row.mt-5.mb-5.h5#frame
     %p.col-sm #
     %p.col-sm Name
     %p.col-sm Location type
