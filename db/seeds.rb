@@ -12,11 +12,10 @@ User.create(email: 'miles.davis@yahoo.com', nickname: 'mile', password: 'passwor
 User.create(email: 'carlos.jobim@google.com', nickname: 'carlo', password: 'password')
 
 SEEDS_LOCATION_TYPES = %w[pub outside restaurant house_party roof_party]
-SEEDS_LOCATION_ADDRESS = "poland, warsaw, debicka"
 
 SEEDS_LOCATION_TYPES.each do |location_type|
   [true, false].each do |is_przypal|
-    Location.create(name: "name number #{rand(0..199)}", location_type: location_type, is_przypal: is_przypal, address: SEEDS_LOCATION_ADDRESS)
+    Location.create(name: "name number #{rand(0..199)}", location_type: location_type, is_przypal: is_przypal, address: "poland, warsaw, al. jerozolimskie #{rand(1..300).floor}")
   end
 end
 location_ids = Location.pluck(:id)
