@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 =======
 
-  # # root 'devise/sessions#new'
+  root 'locations#index'
   # devise_scope :user do
   #   get "/" => "devise/sessions#new"
   # end
