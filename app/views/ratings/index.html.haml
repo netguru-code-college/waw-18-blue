@@ -1,6 +1,6 @@
 %h1 Ratings list
 =link_to 'Add rate', new_rating_path, class: 'btn  btn-success mt-5'
-%div.row.mt-5.mb-5.h5
+%div.row.mt-5.mb-5.h5#frame
   %p.col-sm Rate
   %p.col-sm Location
   %p.col-sm Rate description
@@ -9,6 +9,3 @@
     %p.col-sm= rating.rate
     %p.col-sm= rating.location_id
     %p.col-sm= rating.desc
-
-
-
