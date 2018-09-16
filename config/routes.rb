@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
-  # # root 'devise/sessions#new'
+  root 'locations#index'
   # devise_scope :user do
   #   get "/" => "devise/sessions#new"
   # end
