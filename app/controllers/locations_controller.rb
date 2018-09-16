@@ -1,5 +1,9 @@
 class LocationsController < ApplicationController
   def index
+    gon.push({
+      :locations => Location.all
+    })
+
     @locations = Location.all
   end
 

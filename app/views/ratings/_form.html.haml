@@ -1,0 +1,7 @@
+%div.container-fluid.mt-5
+  = simple_form_for @rating do |f|
+    = f.input :location_id, collection: Location.pluck(:name, :id), include_blank: false
+    = f.select :rate, options_for_select(1..10), class: 'form-control'
+    = f.input :desc
+    = f.hidden_field :user_id, value: current_user.id
+    = f.submit
