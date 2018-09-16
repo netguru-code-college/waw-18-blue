@@ -1,2 +1,10 @@
 %h1 Events#index
 %p Find me in app/views/events/index.html.haml
+%div{:id => "markers-map"}
+
+:javascript
+    mapSetup();
+    placeMarkers(gon.events, 'event');
+    
+
+

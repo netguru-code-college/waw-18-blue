@@ -21,6 +21,11 @@ gem 'geocoder', '~> 1.5'
 gem 'activeadmin'
 gem 'bootstrap', '~> 4.1.3'
 
+# maps support
+gem 'leaflet-rails'
+# allows accessing ruby variables in js
+gem 'gon'
+
 group :development, :test do
   gem 'pry-rails'
 end
