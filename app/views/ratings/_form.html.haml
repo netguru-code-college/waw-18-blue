@@ -1,0 +1,9 @@
+%div.container-fluid.mt-5
+  = simple_form_for @rating do |f|
+    %p= current_user.nickname
+    = f.input :location_id, collection: Location.pluck(:name, :id), include_blank: false
+    = rating_for @location, 'rate'
+    / = f.input :rate
+    / = f.select :rate
+    = f.input :desc
+    = f.submit
