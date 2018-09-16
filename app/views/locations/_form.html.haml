@@ -1,7 +1,7 @@
 %div.container-fluid.mt-5
   = simple_form_for @location do |f|
     = f.input :name
-    = f.input :location_type
+    = f.input :location_type, collection: Location::AVAILABLE_TYPES, include_blank: false
     = f.input :is_przypal
     = f.input :address
     = f.submit
