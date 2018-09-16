@@ -11,15 +11,15 @@
 
 %div.container
   =link_to 'Add Location', new_location_path, class: 'btn  btn-success mt-5'
+  %div.row.mt-5.mb-5.h5
+    %p.col-sm #
+    %p.col-sm Name
+    %p.col-sm Location type
+    %p.col-sm is_przypał
+    %p.col-sm Address
+    %p.col-sm Latitude
+    %p.col-sm Longitude
   - @locations.each do |location|
-    %div.row.mt-5.mb-5.h5
-      %p.col-sm #
-      %p.col-sm Name
-      %p.col-sm Location type
-      %p.col-sm is_przypał
-      %p.col-sm Address
-      %p.col-sm Latitude
-      %p.col-sm Longitude
     %li.row.h5
       = link_to location.id, location_path(location.id), class: 'col-sm'
       %p.col-sm= location.name
